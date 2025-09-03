@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-cfthhuly-gitops
+  description: This is GitOps manifest for go-cfthhuly   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-cfthhuly
+    backstage.io/kubernetes-id: go-cfthhuly 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-cfthhuly
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-cfthhuly
